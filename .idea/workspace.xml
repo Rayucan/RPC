@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8f3932c-22c6-41c0-ae89-8eada8db431a" name="Changes" comment="" />
+    <list default="true" id="a8f3932c-22c6-41c0-ae89-8eada8db431a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/enumeration/SerializerCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/enumeration/SerializerCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/CommonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/CommonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestNettyClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestNettyServer.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +34,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="21N206HypjJR12wmsDmLxdDOYEo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -98,12 +111,26 @@
       <workItem from="1638173089540" duration="1280000" />
       <workItem from="1638175235310" duration="2282000" />
       <workItem from="1638192759652" duration="3025000" />
-      <workItem from="1638195890422" duration="5066000" />
+      <workItem from="1638195890422" duration="5906000" />
+      <workItem from="1638240295917" duration="880000" />
+      <workItem from="1640256461447" duration="3756000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

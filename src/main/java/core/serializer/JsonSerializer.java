@@ -52,6 +52,16 @@ public class JsonSerializer implements CommonSerializer{
      * 由于使用 JSON 序列化和反序列化
      * 无法保证反序列化后仍为原实例类型
      * 需要重新判断
+     * 
+     * 详细解释：
+     * 在 RpcRequest 反序列化时，由于其中有一个字段是 Object 数组，在反序列化时序列化器会根据字段类型进行反序列化，
+     * 而 Object 就是一个十分模糊的类型，会出现反序列化失败的现象，
+     * 这时就需要 RpcRequest 中的另一个字段 ParamTypes 来获取到 Object 数组中的每个实例的实际类，辅助反序列化，
+     * 这就是 handleRequest() 方法的作用。
+     * 
+     * 根本原因：
+     * 上面提到的这种情况不会在其他序列化方式中出现，因为其他序列化方式是转换成字节数组，会记录对象的信息，
+     * 而 JSON 方式本质上只是转换成 JSON 字符串，会丢失对象的类型信息。
      * @param obj
      * @return
      */

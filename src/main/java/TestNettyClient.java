@@ -11,7 +11,7 @@ import core.RpcClientProxy;
  */
 public class TestNettyClient {
     public static void main(String[] args) {
-        RpcClient client = new NettyClient("127.0.0.1",9999);
+        RpcClient client = new NettyClient("127.0.0.1",9988);
         RpcClientProxy rpcClientProxy = new RpcClientProxy(client);
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
         HelloObject object = new HelloObject(114514, "哼哼啊啊啊啊");
