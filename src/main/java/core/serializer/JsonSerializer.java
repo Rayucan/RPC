@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 public class JsonSerializer implements CommonSerializer{
     
-    public static final Logger logger = LoggerFactory.getLogger(JsonSerializer.class);
+    private static final Logger logger = LoggerFactory.getLogger(JsonSerializer.class);
     
     private ObjectMapper objectMapper = new ObjectMapper();
     

@@ -3,6 +3,7 @@ import api.HelloService;
 import core.netty.client.NettyClient;
 import core.RpcClient;
 import core.RpcClientProxy;
+import core.serializer.KryoSerializer;
 
 /**
  * @author Rayucan
@@ -11,12 +12,12 @@ import core.RpcClientProxy;
  */
 public class TestNettyClient {
     public static void main(String[] args) {
-        RpcClient client = new NettyClient("127.0.0.1",9988);
+        RpcClient client = new NettyClient();
+        client.setSerializer(new KryoSerializer());
         RpcClientProxy rpcClientProxy = new RpcClientProxy(client);
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
-        HelloObject object = new HelloObject(114514, "哼哼啊啊啊啊");
-        String result = helloService.hello(object);
-
+        HelloObject helloObject = new HelloObject(114514, "this is a message");
+        String result = helloService.hello(helloObject);
         System.out.println(result);
     }
 }

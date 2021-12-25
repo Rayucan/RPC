@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  * @date Created on 2021/11/25 15:27
  */
 public class RequestHandler {
-    public static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);
     
     public Object handle(RpcRequest rpcRequest,Object service){
         Object result = null;
@@ -36,7 +36,7 @@ public class RequestHandler {
         try {
             method = service.getClass().getMethod(rpcRequest.getMethodName(),rpcRequest.getParameterTypes());
         } catch (NoSuchMethodException e) {
-            return RpcResponse.fail(ResponseCode.NOT_FOUND_METHOD);
+            return RpcResponse.fail(ResponseCode.NOT_FOUND_METHOD, rpcRequest.getRequestId());
         }
         
         return method.invoke(service,rpcRequest.getParameters());

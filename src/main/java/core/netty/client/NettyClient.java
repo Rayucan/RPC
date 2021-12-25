@@ -3,6 +3,9 @@ package core.netty.client;
 import core.RpcClient;
 import core.codec.CommonDecoder;
 import core.codec.CommonEncoder;
+import core.registry.NacosServiceRegistry;
+import core.registry.ServiceRegistry;
+import core.serializer.CommonSerializer;
 import core.serializer.JsonSerializer;
 import common.entity.RpcRequest;
 import common.entity.RpcResponse;
@@ -15,6 +18,10 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.AttributeKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.RpcMessageChecker;
+
+import java.net.InetSocketAddress;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @author Rayucan
@@ -25,57 +32,62 @@ public class NettyClient implements RpcClient {
     
     private static final Logger logger = LoggerFactory.getLogger(NettyClient.class);
     
-    private String host;
-    private int port;
     private static final Bootstrap bootstrap;
     
-    public NettyClient(String host, int port){
-        this.host = host;
-        this.port = port;
-    }
+    private final ServiceRegistry serviceRegistry;
+    
+    private CommonSerializer serializer;
     
     static {
         EventLoopGroup group = new NioEventLoopGroup();
         bootstrap = new Bootstrap();
         bootstrap.group(group)
                 .channel(NioSocketChannel.class)
-                .option(ChannelOption.SO_KEEPALIVE,true)
-                .handler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel ch) throws Exception {
-                        ChannelPipeline pipeline = ch.pipeline();
-                        pipeline.addLast(new CommonDecoder())
-                                .addLast(new CommonEncoder(new KryoSerializer()))
-                                .addLast(new NettyClientHandler());
-                    }
-                });
+                .option(ChannelOption.SO_KEEPALIVE, true);
     }
+    
+    public NettyClient(){
+        this.serviceRegistry = new NacosServiceRegistry();
+    }
+    
     
     @Override
     public Object sendRequest(RpcRequest rpcRequest) {
+        if (serializer == null){
+            logger.error("未设置序列化器");
+        }
+
+        AtomicReference<Object> result = new AtomicReference<>(null);
+        
         try {
-            ChannelFuture future = bootstrap.connect(host,port).sync();
-            logger.info("客户端连接到服务器{}：{}",host,port);
-            Channel channel = future.channel();
+            InetSocketAddress inetSocketAddress = serviceRegistry.lookupService(rpcRequest.getInterfaceName());
+            Channel channel = ChannelProvider.get(inetSocketAddress, serializer);
             
-            if (channel != null){
-                channel.writeAndFlush(rpcRequest).addListener(future1 -> {
-                    if (future1.isSuccess()){
-                        logger.info(String.format("客户端发送消息：%s", rpcRequest.toString()));
+            if (channel.isActive()){
+                channel.writeAndFlush(rpcRequest).addListener(future -> {
+                    if (future.isSuccess()){
+                        logger.info(String.format("客户端发送消息:%s",rpcRequest.toString()));
                     }else {
-                        logger.error("发送消息时发生错误：",future1.cause());
+                        logger.info("发送消息时发生错误：",future.cause());
                     }
                 });
+                
+                channel.closeFuture().sync();
+                AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse");
+                RpcResponse rpcResponse = channel.attr(key).get();
+                RpcMessageChecker.check(rpcRequest, rpcResponse);
+                result.set(rpcResponse.getData());
+            }else {
+                System.exit(0);
             }
-            channel.closeFuture().sync();
-            
-            //通过 AttributeKey 以阻塞的方式获取返回的结果
-            AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse");
-            RpcResponse rpcResponse = channel.attr(key).get();
-            return rpcResponse.getData();
         } catch (InterruptedException e) {
             logger.error("发送消息时发生错误：",e);
         }
-        return null;
+        return result.get();
+    }
+
+    @Override
+    public void setSerializer(CommonSerializer serializer) {
+        this.serializer = serializer;
     }
 }

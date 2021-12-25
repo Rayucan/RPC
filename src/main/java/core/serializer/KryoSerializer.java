@@ -26,7 +26,7 @@ import java.io.IOException;
  * 而不必传入具体的每个属性的类型
  */
 public class KryoSerializer implements CommonSerializer{
-    public static final Logger logger = LoggerFactory.getLogger(KryoSerializer.class);
+    private static final Logger logger = LoggerFactory.getLogger(KryoSerializer.class);
 
     /**
      * Kryo 存在线程安全问题，官方建议是放在 ThreadLocal 里，即一个线程一个 Kryo

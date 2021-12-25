@@ -29,7 +29,7 @@ public class WorkerThread implements Runnable {
             Method method = service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParameterTypes());
             Object returnObject = method.invoke(service, rpcRequest.getParameters());
             
-            out.writeObject(RpcResponse.success(returnObject));
+            out.writeObject(RpcResponse.success(returnObject, rpcRequest.getRequestId()));
             out.flush();
 
         } catch (Exception e) {

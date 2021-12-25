@@ -1,4 +1,4 @@
-package core.registry;
+package core.provider;
 
 import common.enumeration.RpcError;
 import common.exception.RpcException;
@@ -14,8 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @description
  * @date Created on 2021/11/25 15:01
  */
-public class DefaultServiceRegistry implements ServiceRegistry{
-    private static final Logger logger = LoggerFactory.getLogger(DefaultServiceRegistry.class);
+public class ServiceProviderImpl implements ServiceProvider {
+    private static final Logger logger = LoggerFactory.getLogger(ServiceProviderImpl.class);
     
     //map 和 set 都为 static
     //是为了保证全局唯一的注册信息，同时创建 RpcServer 时就不需要传入了
@@ -23,7 +23,7 @@ public class DefaultServiceRegistry implements ServiceRegistry{
     private static final Set<String> registeredService = ConcurrentHashMap.newKeySet();
     
     @Override
-    public synchronized <T> void register(T service) throws RpcException {
+    public synchronized <T> void addServiceProvider(T service) throws RpcException {
         String serviceName = service.getClass().getCanonicalName();
         
         if (registeredService.contains(serviceName))
@@ -43,7 +43,7 @@ public class DefaultServiceRegistry implements ServiceRegistry{
     }
 
     @Override
-    public synchronized Object getService(String serviceName) throws RpcException {
+    public synchronized Object getServiceProvider(String serviceName) throws RpcException {
         Object service = serviceMap.get(serviceName);
         if (service == null)
             throw new RpcException(RpcError.SERVICE_NOT_FOUND);

@@ -1,24 +1,24 @@
 package core.registry;
 
-import common.exception.RpcException;
+import java.net.InetSocketAddress;
 
 /**
  * @author Rayucan
  * @description
- * @date Created on 2021/11/25 14:59
+ * @date Created on 2021/12/23 20:18
  */
 public interface ServiceRegistry {
     /**
-     * 注册服务信息
-     * @param service 
-     * @param <T> 
+     * 将服务名与地址注册到服务注册中心
+     * @param serviceName
+     * @param inetSocketAddress
      */
-    <T> void register(T service) throws RpcException;
+    void register(String serviceName, InetSocketAddress inetSocketAddress);
 
     /**
-     * 获取服务
+     * 根据服务名，从服务注册中心获取地址
      * @param serviceName
      * @return
      */
-    Object getService(String serviceName) throws RpcException;
+    InetSocketAddress lookupService(String serviceName);
 }

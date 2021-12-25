@@ -8,13 +8,59 @@
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/enumeration/SerializerCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/enumeration/SerializerCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/entity/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/entity/RpcRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/entity/RpcResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/entity/RpcResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/enumeration/RpcError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/enumeration/RpcError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/codec/CommonDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/codec/CommonDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/CommonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/CommonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/DefaultServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProviderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestNettyClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestNettyServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/KryoSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/KryoSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/client/SocketClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/server/RequestHandlerThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/server/SocketServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unused/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unused/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestNettyServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/HelloObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/HelloService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/HelloServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/entity/RpcRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/entity/RpcResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/enumeration/PackageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/enumeration/ResponseCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/enumeration/RpcError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/enumeration/SerializerCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/exception/RpcException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/RequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/RpcClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/RpcClientProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/RpcServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/codec/CommonDecoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/codec/CommonEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/registry/DefaultServiceRegistry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/registry/ServiceRegistry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/CommonSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/JsonSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/KryoSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/client/SocketClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/server/RequestHandlerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/server/SocketServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unused/WorkerThread.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +70,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,6 +98,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -113,7 +160,8 @@
       <workItem from="1638192759652" duration="3025000" />
       <workItem from="1638195890422" duration="5906000" />
       <workItem from="1638240295917" duration="880000" />
-      <workItem from="1640256461447" duration="3756000" />
+      <workItem from="1640256461447" duration="7860000" />
+      <workItem from="1640432307199" duration="4895000" />
     </task>
     <servers />
   </component>
@@ -131,21 +179,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/TestNettyServer.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/TestNettyClient.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

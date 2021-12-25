@@ -9,8 +9,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import core.registry.DefaultServiceRegistry;
-import core.registry.ServiceRegistry;
+import core.provider.ServiceProviderImpl;
+import core.provider.ServiceProvider;
 import core.RequestHandler;
 
 /**
@@ -19,13 +19,13 @@ import core.RequestHandler;
  * @date Created on 2021/11/29 21:55
  */
 public class NettyServerHandler extends SimpleChannelInboundHandler<RpcRequest> {
-    public static final Logger logger = LoggerFactory.getLogger(NettyServerHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(NettyServerHandler.class);
     private static RequestHandler requestHandler;
-    private static ServiceRegistry serviceRegistry;
+    private static ServiceProvider serviceRegistry;
     
     static {
         requestHandler = new RequestHandler();
-        serviceRegistry = new DefaultServiceRegistry();
+        serviceRegistry = new ServiceProviderImpl();
     }
     
     @Override
@@ -33,9 +33,9 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<RpcRequest> 
         try {
             logger.info("服务器接收到请求：{}",rpcRequest);
             String interfaceName = rpcRequest.getInterfaceName();
-            Object service = serviceRegistry.getService(interfaceName);
+            Object service = serviceRegistry.getServiceProvider(interfaceName);
             Object result = requestHandler.handle(rpcRequest, service);
-            ChannelFuture future = channelHandlerContext.writeAndFlush(RpcResponse.success(result));
+            ChannelFuture future = channelHandlerContext.writeAndFlush(RpcResponse.success(result, rpcRequest.getRequestId()));
             future.addListener(ChannelFutureListener.CLOSE);
         }finally {
             ReferenceCountUtil.release(rpcRequest);

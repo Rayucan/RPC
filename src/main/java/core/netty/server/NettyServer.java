@@ -1,7 +1,14 @@
 package core.netty.server;
 
+import common.enumeration.RpcError;
+import common.exception.RpcException;
 import core.codec.CommonDecoder;
 import core.codec.CommonEncoder;
+import core.provider.ServiceProvider;
+import core.provider.ServiceProviderImpl;
+import core.registry.NacosServiceRegistry;
+import core.registry.ServiceRegistry;
+import core.serializer.CommonSerializer;
 import core.serializer.JsonSerializer;
 import core.serializer.KryoSerializer;
 import io.netty.bootstrap.ServerBootstrap;
@@ -18,6 +25,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import core.RpcServer;
 
+import java.net.InetSocketAddress;
+
 /**
  * @author Rayucan
  * @description
@@ -27,8 +36,23 @@ public class NettyServer implements RpcServer {
     
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
     
+    private final String host;
+    private final int port;
+    
+    private final ServiceRegistry serviceRegistry;
+    private final ServiceProvider serviceProvider;
+    
+    private CommonSerializer serializer;
+    
+    public NettyServer(String host, int port){
+        this.host = host;
+        this.port = port;
+        serviceRegistry = new NacosServiceRegistry();
+        serviceProvider = new ServiceProviderImpl();
+    }
+    
     @Override
-    public void start(int port) {
+    public void start() {
         NioEventLoopGroup bossGroup = new NioEventLoopGroup();
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
         
@@ -49,7 +73,7 @@ public class NettyServer implements RpcServer {
                             pipeline.addLast(new NettyServerHandler());
                         }
                     });
-            ChannelFuture future = serverBootstrap.bind(port).sync();
+            ChannelFuture future = serverBootstrap.bind(host, port).sync();
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             logger.error("启动服务器发生错误：",e);
@@ -57,5 +81,22 @@ public class NettyServer implements RpcServer {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
+    }
+
+    @Override
+    public void setSerializer(CommonSerializer serializer) {
+        this.serializer = serializer;
+    }
+
+    @Override
+    public <T> void publishService(Object service, Class<T> serviceClass) {
+        if (serializer == null){
+            logger.error("未设置序列化器");
+            throw new RpcException(RpcError.SERIALIZER_NOT_FOUND);
+        }
+        
+        serviceProvider.addServiceProvider(service);
+        serviceRegistry.register(serviceClass.getCanonicalName(),new InetSocketAddress(host, port));
+        start();
     }
 }

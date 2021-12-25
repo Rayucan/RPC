@@ -1,8 +1,9 @@
 import api.HelloService;
 import api.HelloServiceImpl;
-import core.registry.DefaultServiceRegistry;
-import core.registry.ServiceRegistry;
+import core.provider.ServiceProviderImpl;
+import core.provider.ServiceProvider;
 import core.netty.server.NettyServer;
+import core.serializer.KryoSerializer;
 
 /**
  * @author Rayucan
@@ -11,10 +12,9 @@ import core.netty.server.NettyServer;
  */
 public class TestNettyServer {
     public static void main(String[] args) {
-        HelloService helloService = new HelloServiceImpl();
-        ServiceRegistry registry = new DefaultServiceRegistry();
-        registry.register(helloService);
-        NettyServer server = new NettyServer();
-        server.start(9988);
+        HelloServiceImpl helloService = new HelloServiceImpl();
+        NettyServer server = new NettyServer("127.0.0.1", 9977);
+        server.setSerializer(new KryoSerializer());
+        server.publishService(helloService, HelloService.class);
     }
 }

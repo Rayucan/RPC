@@ -20,7 +20,7 @@ import java.util.List;
  * @date Created on 2021/11/29 16:19
  */
 public class CommonDecoder extends ReplayingDecoder {
-    public static final Logger logger = LoggerFactory.getLogger(CommonDecoder.class);
+    private static final Logger logger = LoggerFactory.getLogger(CommonDecoder.class);
     public static final int MAGIC_NUMBER = 0xCAFEBABE;
     
     @Override

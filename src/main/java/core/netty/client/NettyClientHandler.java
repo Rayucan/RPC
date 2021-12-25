@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * @date Created on 2021/11/29 22:02
  */
 public class NettyClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
-    public static final Logger logger = LoggerFactory.getLogger(NettyClientHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(NettyClientHandler.class);
     
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcResponse msg) throws Exception {
