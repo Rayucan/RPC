@@ -13,8 +13,7 @@ import core.serializer.KryoSerializer;
 public class TestNettyServer {
     public static void main(String[] args) {
         HelloServiceImpl helloService = new HelloServiceImpl();
-        NettyServer server = new NettyServer("127.0.0.1", 9977);
-        server.setSerializer(new KryoSerializer());
-        server.publishService(helloService, HelloService.class);
+        NettyServer nettyServer = new NettyServer("127.0.0.1", 6669);
+        nettyServer.publishService(helloService,HelloService.class);
     }
 }

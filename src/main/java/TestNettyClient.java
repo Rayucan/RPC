@@ -12,12 +12,12 @@ import core.serializer.KryoSerializer;
  */
 public class TestNettyClient {
     public static void main(String[] args) {
-        RpcClient client = new NettyClient();
-        client.setSerializer(new KryoSerializer());
+        NettyClient client = new NettyClient();
         RpcClientProxy rpcClientProxy = new RpcClientProxy(client);
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
-        HelloObject helloObject = new HelloObject(114514, "this is a message");
-        String result = helloService.hello(helloObject);
+        HelloObject object = new HelloObject(114514, "THIS IS A MESSAGE");
+        String result = helloService.hello(object);
+
         System.out.println(result);
     }
 }

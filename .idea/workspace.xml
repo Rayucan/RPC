@@ -4,30 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8f3932c-22c6-41c0-ae89-8eada8db431a" name="Changes" comment="">
+    <list default="true" id="a8f3932c-22c6-41c0-ae89-8eada8db431a" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/entity/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/entity/RpcRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/entity/RpcResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/entity/RpcResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/enumeration/RpcError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/enumeration/RpcError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcClientProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/RpcServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/codec/CommonDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/codec/CommonDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/client/NettyClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/netty/server/NettyServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/DefaultServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProviderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/JsonSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/serializer/KryoSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/serializer/KryoSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/client/SocketClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/server/RequestHandlerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/socket/server/SocketServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unused/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unused/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProviderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/provider/ServiceProviderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/NacosServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/registry/NacosServiceRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/registry/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/registry/ServiceRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TestNettyClient.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TestNettyServer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/HelloObject.class" beforeDir="false" />
@@ -46,21 +38,22 @@
       <change beforePath="$PROJECT_DIR$/target/classes/core/RpcServer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/codec/CommonDecoder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/codec/CommonEncoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/ChannelProvider$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/ChannelProvider.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClient.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/netty/client/NettyClientHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServer$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/netty/server/NettyServerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/registry/DefaultServiceRegistry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/provider/ServiceProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/provider/ServiceProviderImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/registry/NacosServiceRegistry.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/registry/ServiceRegistry.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/CommonSerializer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/JsonSerializer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/core/serializer/KryoSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/client/SocketClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/server/RequestHandlerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/socket/server/SocketServer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/unused/WorkerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/RpcMessageChecker.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +64,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\apache-maven-3.8.4\repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.4" />
+        <option name="userSettingsFile" value="E:\apache-maven-3.8.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="21N206HypjJR12wmsDmLxdDOYEo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -91,14 +96,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -138,8 +144,6 @@
       <list>
         <item itemvalue="Application.TestNettyClient" />
         <item itemvalue="Application.TestNettyServer" />
-        <item itemvalue="Application.TestClient" />
-        <item itemvalue="Application.TestServer" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +165,19 @@
       <workItem from="1638195890422" duration="5906000" />
       <workItem from="1638240295917" duration="880000" />
       <workItem from="1640256461447" duration="7860000" />
-      <workItem from="1640432307199" duration="4895000" />
+      <workItem from="1640432307199" duration="5224000" />
+      <workItem from="1640437819869" duration="4583000" />
+      <workItem from="1641562101836" duration="387000" />
+      <workItem from="1641562796346" duration="100000" />
+      <workItem from="1641562917865" duration="150000" />
+      <workItem from="1641563094461" duration="185000" />
+      <workItem from="1641563305221" duration="295000" />
+      <workItem from="1641563624852" duration="65000" />
+      <workItem from="1641563711483" duration="396000" />
+      <workItem from="1641721326691" duration="605000" />
+      <workItem from="1641734165616" duration="681000" />
+      <workItem from="1641881007283" duration="4450000" />
+      <workItem from="1641885948974" duration="994000" />
     </task>
     <servers />
   </component>
@@ -178,6 +194,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

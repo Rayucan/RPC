@@ -1,13 +1,17 @@
 package core;
 
 import common.entity.RpcRequest;
+import common.entity.RpcResponse;
+import core.netty.client.NettyClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.RpcMessageChecker;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author Rayucan
@@ -43,7 +47,22 @@ public class RpcClientProxy implements InvocationHandler {
                 method.getName(),
                 args,
                 method.getParameterTypes());
+
+        RpcResponse rpcResponse = null;
         
-        return rpcClient.sendRequest(rpcRequest);
+        if (rpcClient instanceof NettyClient){
+            CompletableFuture<RpcResponse> completableFuture = (CompletableFuture<RpcResponse>) rpcClient.sendRequest(rpcRequest);
+        
+            try {
+                rpcResponse = completableFuture.get();
+            }catch (Exception e){
+                logger.error("RpcClientProxy:请求发送失败",e);
+                return null;
+            }
+        }
+
+        RpcMessageChecker.check(rpcRequest,rpcResponse);
+        
+        return rpcResponse.getData();
     }
 }

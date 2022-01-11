@@ -4,6 +4,8 @@ import common.enumeration.RpcError;
 import common.exception.RpcException;
 import core.codec.CommonDecoder;
 import core.codec.CommonEncoder;
+import core.hook.ShutdownHook;
+import core.loadbalancer.RandomLoadBalancer;
 import core.provider.ServiceProvider;
 import core.provider.ServiceProviderImpl;
 import core.registry.NacosServiceRegistry;
@@ -45,14 +47,22 @@ public class NettyServer implements RpcServer {
     private CommonSerializer serializer;
     
     public NettyServer(String host, int port){
+        this(host,port,new KryoSerializer());
+    }
+
+    public NettyServer(String host, int port, CommonSerializer serializer) {
         this.host = host;
         this.port = port;
-        serviceRegistry = new NacosServiceRegistry();
-        serviceProvider = new ServiceProviderImpl();
+        this.serializer = serializer;
+        
+        this.serviceRegistry = new NacosServiceRegistry();
+        this.serviceProvider = new ServiceProviderImpl();
     }
-    
+
     @Override
     public void start() {
+        ShutdownHook.getShutdownHook().addClearAllHook();
+        
         NioEventLoopGroup bossGroup = new NioEventLoopGroup();
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
         
@@ -89,14 +99,15 @@ public class NettyServer implements RpcServer {
     }
 
     @Override
-    public <T> void publishService(Object service, Class<T> serviceClass) {
+    public <T> void publishService(T service, Class<T> serviceClass) {
         if (serializer == null){
             logger.error("未设置序列化器");
             throw new RpcException(RpcError.SERIALIZER_NOT_FOUND);
         }
         
-        serviceProvider.addServiceProvider(service);
+        serviceProvider.addServiceProvider(service,serviceClass);
         serviceRegistry.register(serviceClass.getCanonicalName(),new InetSocketAddress(host, port));
+        
         start();
     }
 }
